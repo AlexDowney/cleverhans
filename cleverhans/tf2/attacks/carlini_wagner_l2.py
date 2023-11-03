@@ -150,7 +150,7 @@ class CarliniWagnerL2(object):
         lower_bound = tf.zeros(shape[:1])
         upper_bound = tf.ones(shape[:1]) * 1e10
 
-        const = tf.ones(shape) * self.initial_const
+        const = tf.ones(shape[0]) * self.initial_const
 
         # placeholder variables for best values
         best_l2 = tf.fill(shape[:1], 1e10)
@@ -230,7 +230,7 @@ class CarliniWagnerL2(object):
 
                 # mask is of shape [batch_size]; best_attack is [batch_size, image_size]
                 # need to expand
-                mask = tf.reshape(mask, [-1, 1, 1, 1])
+                mask = tf.reshape(mask, [-1, 1, 1])
                 mask = tf.tile(mask, [1, *best_attack.shape[1:]])
 
                 best_attack = set_with_mask(best_attack, x_new, mask)
