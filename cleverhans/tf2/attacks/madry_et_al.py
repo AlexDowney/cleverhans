@@ -18,6 +18,7 @@ def madry_et_al(
     targeted=False,
     rand_minmax=0.3,
     sanity_checks=True,
+    loss_fn=None,
 ):
     """
     The attack from Madry et al 2017
@@ -36,4 +37,5 @@ def madry_et_al(
         rand_init=True,
         rand_minmax=rand_minmax,
         sanity_checks=sanity_checks,
+        loss_fn=loss_fn,
     )
