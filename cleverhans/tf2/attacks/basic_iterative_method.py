@@ -19,6 +19,7 @@ def basic_iterative_method(
     rand_init=None,
     rand_minmax=0.3,
     sanity_checks=True,
+    loss_fn=None,
 ):
     """
     The BasicIterativeMethod attack.
@@ -37,4 +38,5 @@ def basic_iterative_method(
         rand_init=False,
         rand_minmax=rand_minmax,
         sanity_checks=sanity_checks,
+        loss_fn=loss_fn,
     )
